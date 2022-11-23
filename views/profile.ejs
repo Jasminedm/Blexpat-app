@@ -1,0 +1,174 @@
+<%- include('partials/header') -%>
+<div class="container">
+  <div class="row mt-5">
+      <div class="col-6">
+          <div>
+              <p><strong>User Name</strong>: <%= user.userName %></p>
+              <p><strong>Email</strong>: <%= user.email %></p>
+          </div>
+
+          <div class="mt-5">
+            <h2>Add a post</h2>
+            <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+              <div class="mb-3">
+                  <label for="title" class="form-label">Location</label>
+                  <input type="text" class="form-control" id="title" name="title">
+              </div>
+              
+            <div class="mb-3">
+              <h6>How long was your trip?</h6>
+              <label for="arrive" class="form-label">Arrived</label>
+              <input type="date" class="form-control" id="arrive" name="arrive">
+              <label for="depart" class="form-label">Departure</label>
+              <input type="date" class="form-control" id="depart" name="depart">
+          </div>
+
+            <div class="mb-3">
+              <label for="imgUpload" class="form-label">Image</label>
+              <input type="file" class="form-control" id="imageUpload" name="file">
+            </div>
+
+              <div class="mb-3">
+                <label for="experience" class="form-label">Experience</label>
+                <textarea class="form-control" id="experience" name="experience"></textarea>
+              </div>
+
+              <div class="mb-3">
+                <h6>Where did you sleep?</h6>
+               
+               <input type="radio"  id="apartment" name="apartment">
+               <label for="apartment" class="form-label">Apartment</label>
+               
+               <input type="radio"  id="fullHome" name="fullHome">
+               <label for="fullHome" class="form-label">Full Home</label>
+               
+               <input type="radio"  id="family" name="family">
+               <label for="family" class="form-label">Family</label><br>
+               
+               <input type="radio"  id="hotel" name="hotel">
+               <label for="hotel" class="form-label">Hotel</label>
+               
+               <input type="radio"  id="hostel" name="hostel">
+               <label for="hostel" class="form-label">Hostel</label>
+               
+               <input type="radio"  id="airbnb" name="airbnb">
+               <label for="airbnb" class="form-label">Airbnb</label><br>
+               
+               <input type="radio"  id="motel" name="motel">
+               <label for="motel" class="form-label">Motel</label>
+               
+               <input type="radio"  id="Other" name="Other">
+               <label for="Other" class="form-label">Other</label>
+              </div>
+              
+              <div class="mb-3">
+                <h6>Did you utilize healthcare?</h6>
+                
+                <input type="radio"  id="yes" name="health">
+                <label for="yes" class="form-label">Yes</label>
+                
+                <input type="radio"  id="no" name="health">
+                <label for="no" class="form-label">No</label>
+              </div>
+
+              
+              <div class="mb-3">
+                <h6>Do you have food allergies?</h6>
+                
+                <input type="radio"  id="yes" name="food">
+                <label for="yes" class="form-label">Yes</label>
+                
+                <input type="radio"  id="no" name="food">
+                <label for="no" class="form-label">No</label>
+              </div>
+
+              <div class="mb-3">
+               <h6>What kind of attractions did you visit?</h6>
+               
+               <input type="radio"  id="hiking" name="hiking">
+               <label for="hiking" class="form-label">Hiking</label>
+               
+               <input type="radio"  id="boating" name="boating">
+               <label for="boating" class="form-label">Boating</label>
+               
+               <input type="radio"  id="parks" name="parks">
+               <label for="parks" class="form-label">Parks</label><br>
+               
+               <input type="radio"  id="concerts" name="concerts">
+               <label for="concerts" class="form-label">Concerts</label>
+               
+               <input type="radio"  id="Other" name="Other">
+               <label for="Other" class="form-label">Other</label>
+              </div>
+
+              <div class="mb-3">
+                <h6>Were you able to legally drive?</h6>
+                
+                <input type="radio"  id="yes" name="drive">
+                <label for="yes" class="form-label">Yes</label>
+                
+                <input type="radio"  id="no" name="drive">
+                <label for="no" class="form-label">No</label>
+              </div>
+
+              <div class="mb-3">
+                <h6>Shopping?</h6>
+               
+               <input type="radio"  id="mall" name="mall">
+               <label for="mall" class="form-label">Mall</label>
+
+               <input type="radio"  id="market" name="market">
+               <label for="market" class="form-label">Flee Market</label>
+               
+               <input type="radio"  id="grocery" name="grocery">
+               <label for="grocery" class="form-label">Grocery</label>
+              </div>
+
+              <div class="mb-3">
+                <h6>Did you have trouble with...?</h6>
+               
+               <input type="radio"  id="communication" name="communication">
+               <label for="communication" class="form-label">Communication</label>
+               
+               <input type="radio"  id="living" name="living">
+               <label for="living" class="form-label">Finding a home</label>
+               
+               <input type="radio"  id="eat" name="eat">
+               <label for="eat" class="form-label">Finding food</label><br>
+               
+               <input type="radio"  id="careOp" name="careOp">
+               <label for="careOp" class="form-label">Healthcare options</label>
+               
+               <input type="radio"  id="Other" name="Other">
+               <label for="Other" class="form-label">Other</label>
+
+                
+              </div>
+              <div class="mb-3">
+                <label for="kidfriendly" class="form-label">Kid Friendly?</label>
+                <input type="checkbox"  id="kidfriendly" name="kidfriendly">
+              </div>
+              <div class="mb-3">
+                <label for="petfriendly" class="form-label">Pet Friendly?</label>
+                <input type="checkbox" id="petfriendly" name="petfriendly">
+              </div> 
+              <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+            </form>
+          </div>
+      </div>
+
+      <div class="col-6">
+        <ul class="row list-unstyled">
+        <% for(var i=0; i<posts.length; i++) {%>
+          <li class="col-6 justify-content-between mt-5">
+            <a href="/post/<%= posts[i]._id%>">
+              <img class="img-fluid" src="<%= posts[i].image%>">
+            </a>
+          </li>
+        <% } %>
+        </ul>
+      </div>  
+    </div>
+  </div>
+</div>
+<%- include('partials/footer') -%>
