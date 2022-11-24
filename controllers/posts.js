@@ -34,11 +34,21 @@ module.exports = {
       const result = await cloudinary.uploader.upload(req.file.path); 
 
       await Post.create({
-        title: req.body.title,
-        image: result.secure_url,
+        location: req.body.location,
+        postImg: result.secure_url,
         cloudinaryId: result.public_id,
-        caption: req.body.caption,
-        likes: 0,
+        duration: req.body.duration,
+        budgetPaid: req.body.budgetPaid,
+        experience: req.body.experience,
+        room: req.body.room,
+        healthcare: req.body.healthcare,
+        allergy: req.body.allergy,
+        attractions: req.body.attractions,
+        transp: req.body.transp,
+        shop: req.body.shop,
+        trouble: req.body.trouble,
+        kidfriendly: req.body.kidfriendly,
+        petfriendly: req.body.petfriendly,
         user: req.user.id,
       });
       console.log("Post has been added!");

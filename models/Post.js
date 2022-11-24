@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 
 const PostSchema = new mongoose.Schema({
-  title: {
+  location: {
     type: String,
     required: true,
   },
-  image: {
+  postImg: {
     type: String,
     require: true,
   },
@@ -13,12 +13,52 @@ const PostSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
-  caption: {
+  duration: {
+        type: Date,
+        default: Date.now,
+  },
+  budgetPaid: {
+    type: Number,
+    required: true,
+  },
+  experience: {
     type: String,
     required: true,
   },
-  likes: {
-    type: Number,
+  room: {
+    type: String,
+    required: true,
+  },
+  healthcare: {
+    type: String,
+    required: true,
+  },
+  allergy: {
+    type: String,
+    required: true,
+  },
+  attractions: {
+    type: String,
+    required: true,
+  },
+  transp: {
+    type: String,
+    required: true,
+  },
+  shop: {
+    type: String,
+    required: true,
+  },
+  trouble:{
+    type: String,
+    required: true,
+  },
+  kidfriendly: {
+    type: String,
+    required: true,
+  },
+  petfriendly: {
+    type: String,
     required: true,
   },
   user: {
@@ -31,4 +71,4 @@ const PostSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Post", PostSchema);
+module.exports = mongoose.model("myTrip", PostSchema);
