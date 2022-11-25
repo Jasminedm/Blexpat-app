@@ -21,7 +21,7 @@ const PostSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  exp: {
+  personalnote: {
     type: String,
     required: true,
   },
@@ -37,10 +37,6 @@ const PostSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  attractions: {
-    type: String,
-    required: true,
-  },
   transp: {
     type: String,
     required: true,
@@ -53,15 +49,15 @@ const PostSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  trouble:{
+  help:{
     type: String,
     required: true,
   },
-  kidfriendly: {
+  kid: {
     type: String,
     required: true,
   },
-  petfriendly: {
+  pet: {
     type: String,
     required: true,
   },
@@ -75,4 +71,4 @@ const PostSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("myTrip", PostSchema);
+module.exports = mongoose.model("Plan", PostSchema);

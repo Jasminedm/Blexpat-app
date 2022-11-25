@@ -19,6 +19,39 @@ module.exports = {
       console.log(err);
     }
   },
+  getMyTrips: async (req, res) => {
+    try {
+      const posts = await Post.find().sort({ createdAt: "desc" }).lean();
+      res.render("personalT.ejs", { posts: posts});
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getPlanTrip: async (req, res) => {
+    try {
+      const posts = await Post.find().sort({ createdAt: "desc" }).lean();
+      res.render("planTrip.ejs", { posts: posts});
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getExplore: async (req, res) => {
+    try {
+      const posts = await Post.find().sort({ createdAt: "desc" }).lean();
+      res.render("explore.ejs", { posts: posts});
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getPlan: async (req, res) => {
+    try {
+      const posts = await Post.find().sort({ createdAt: "desc" }).lean();
+      res.render("plan.ejs", { posts: posts});
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  
   getPost: async (req, res) => {
     try {
       const post = await Post.findById(req.params.id);
@@ -39,12 +72,13 @@ module.exports = {
         cloudinaryId: result.public_id,
         duration: req.body.duration,
         budgetPaid: req.body.budgetPaid,
-        experience: req.body.experience,
+        exp: req.body.exp,
         room: req.body.room,
         healthcare: req.body.healthcare,
         allergy: req.body.allergy,
         attractions: req.body.attractions,
         transp: req.body.transp,
+        handicap: req.body.handicap,
         shop: req.body.shop,
         trouble: req.body.trouble,
         kidfriendly: req.body.kidfriendly,
@@ -52,7 +86,7 @@ module.exports = {
         user: req.user.id,
       });
       console.log("Post has been added!");
-      res.redirect("/profile");
+      res.redirect("/personalT");
     } catch (err) {
       console.log(err);
     }

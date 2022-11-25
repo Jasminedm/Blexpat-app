@@ -6,7 +6,7 @@
               <p><strong>User Name</strong>: <%= user.userName %></p>
               <p><strong>Email</strong>: <%= user.email %></p>
           </div>
-
+          <button><a href="/personalT">My Trips</a></button>
           <div class="mt-5">
             <h2>My Adventure</h2>
             <form action="/post/createPost" enctype="multipart/form-data" method="POST">
@@ -47,7 +47,7 @@
             
 
               <div class="mb-3">
-                <label for="experience" class="form-label">Share details!</label>
+                <label for="experience" name="exp" class="form-label">Share details!</label>
                 <textarea class="form-control" id="experience" name="experience"></textarea>
               </div>
 
@@ -128,6 +128,15 @@
                 <label for="yes" class="form-label">Yes</label>
                 
                 <input type="radio"  id="no" name="transport">
+                <label for="no" class="form-label">No</label>
+              </div>
+              <div class="mb-3">
+                <h6 name="handicap">Handicap Accessible</h6>
+                
+                <input type="radio"  id="yes" name="access">
+                <label for="yes" class="form-label">Yes</label>
+                
+                <input type="radio"  id="no" name="access">
                 <label for="no" class="form-label">No</label>
               </div>
 

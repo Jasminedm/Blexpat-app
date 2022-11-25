@@ -1,0 +1,187 @@
+<%- include('partials/header') -%>
+<h1>Plan</h1><h2>Plan your upcomming trip</h2>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-6">
+            <div>
+                
+            </div>
+            <button><a href="/personalT">My Trips</a></button>
+            <button><a href="/planTrip">Upcomming Trips</a></button>
+            <div class="mt-5">
+              <h2>My upcomming Adventure</h2>
+              <form action="/post/createPlan" enctype="multipart/form-data" method="POST">
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location</label>
+                    <input type="text" class="form-control" id="location" name="location">
+                </div>
+  
+                <div class="mb-3">
+                  <input type="file" id="image-input" accept="image/jpeg, image/png, image/jpg" name="postImg">
+          <div class="display-image" style="background-image: url('');"></div>
+                </div>
+  
+            <div class="mb-3">
+                <h6 name="duration">Duration:</h6>
+                <label for="arrive" class="form-label">I will Arrive</label>
+                <input type="date" class="form-control" id="arrive" name="arrive">
+                <label for="depart" class="form-label">Departure</label>
+                <input type="date" class="form-control" id="depart" name="depart">
+            </div>
+  
+            <div name ="budgetPaid" class="dropdown">
+              <label>Budget:</label>  
+                <select>  
+                <option value = "1">$500 - $1000   
+                </option>  
+                <option value = "2">$1000 - $1500   
+                </option>  
+                <option value = "3">$1500 - $2000  
+                </option>  
+                <option value = "4">$2500 - $3000  
+                </option> 
+                <option value = "5">$3000 - $4000  
+                </option>  
+                </select>  
+            </div><br>
+  
+              
+  
+                <div class="mb-3">
+                  <label for="notes" name="personalnote" class="form-label">Personal Notes</label>
+                  <textarea class="form-control" id="notes" name="notes"></textarea>
+                </div>
+  
+                
+  
+                <div class="mb-3">
+                  <h6 name="room">Room/Board</h6>
+                 
+                 <input type="radio"  id="apartment" name="apartment">
+                 <label for="apartment" class="form-label">Apartment</label>
+                 
+                 <input type="radio"  id="fullHome" name="fullHome">
+                 <label for="fullHome" class="form-label">Full Home</label>
+                 
+                 <input type="radio"  id="family" name="family">
+                 <label for="family" class="form-label">Family</label><br>
+                 
+                 <input type="radio"  id="hotel" name="hotel">
+                 <label for="hotel" class="form-label">Hotel</label>
+                 
+                 <input type="radio"  id="hostel" name="hostel">
+                 <label for="hostel" class="form-label">Hostel</label>
+                 
+                 <input type="radio"  id="airbnb" name="airbnb">
+                 <label for="airbnb" class="form-label">Airbnb</label><br>
+                 
+                 <input type="radio"  id="motel" name="motel">
+                 <label for="motel" class="form-label">Motel</label>
+                 
+                 <input type="radio"  id="Other" name="Other">
+                 <label for="Other" class="form-label">Other</label>
+                </div>
+                
+                <div class="mb-3">
+                  <h6 name="healthcare">Will I need access to healthcare?</h6>
+                  
+                  <input type="radio"  id="yes" name="health">
+                  <label for="yes" class="form-label">Yes</label>
+                  
+                  <input type="radio"  id="no" name="health">
+                  <label for="no" class="form-label">No</label>
+                </div>
+  
+                
+                <div class="mb-3">
+                  <h6 name="allergy">Fod allergy accommodations?</h6>
+                  
+                  <input type="radio"  id="yes" name="food">
+                  <label for="yes" class="form-label">Yes</label>
+                  
+                  <input type="radio"  id="no" name="food">
+                  <label for="no" class="form-label">No</label>
+                </div>
+  
+                
+  
+                <div class="mb-3">
+                  <h6 name="transp">Accessible transportation</h6>
+                  
+                  <input type="radio"  id="yes" name="transport">
+                  <label for="yes" class="form-label">Yes</label>
+                  
+                  <input type="radio"  id="no" name="transport">
+                  <label for="no" class="form-label">No</label>
+                </div>
+                <div class="mb-3">
+                  <h6 name="handicap">I need Handicap Accommodations</h6>
+                  
+                  <input type="radio"  id="yes" name="access">
+                  <label for="yes" class="form-label">Yes</label>
+                  
+                  <input type="radio"  id="no" name="access">
+                  <label for="no" class="form-label">No</label>
+                </div>
+  
+                <div class="mb-3">
+                  <h6 name="shop">I want access to shopping:</h6>
+                 
+                 <input type="radio"  id="mall" name="mall">
+                 <label for="mall" class="form-label">Mall</label>
+  
+                 <input type="radio"  id="market" name="market">
+                 <label for="market" class="form-label">Flee Market</label>
+                 
+                 <input type="radio"  id="grocery" name="grocery">
+                 <label for="grocery" class="form-label">Grocery</label>
+                </div>
+  
+                <div class="mb-3">
+                  <h6 name="help">I need help with...?</h6>
+                 
+                 <input type="radio"  id="communication" name="communication">
+                 <label for="communication" class="form-label">Communication</label>
+                 
+                 <input type="radio"  id="living" name="living">
+                 <label for="living" class="form-label">Finding a home</label>
+                 
+                 <input type="radio"  id="eat" name="eat">
+                 <label for="eat" class="form-label">Finding food</label><br>
+                 
+                 <input type="radio"  id="careOp" name="careOp">
+                 <label for="careOp" class="form-label">Healthcare options</label>
+                 
+                 <input type="radio"  id="Other" name="Other">
+                 <label for="Other" class="form-label">Other</label>
+  
+                  
+                </div>
+                <div class="mb-3">
+                  <label for="kidfriendly" name="kid" class="form-label">Traveling with little ones?</label>
+                  <input type="checkbox"  id="kidfriendly" name="kidfriendly">
+                </div>
+                <div class="mb-3">
+                  <label for="petfriendly" name="pet" class="form-label">Traveling with pets?</label>
+                  <input type="checkbox" id="petfriendly" name="petfriendly">
+                </div> 
+                <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+              </form>
+            </div>
+        </div>
+  
+        <div class="col-6">
+          <ul class="row list-unstyled">
+          <% for(var i=0; i<posts.length; i++) {%>
+            <li class="col-6 justify-content-between mt-5">
+              <a href="/post/<%= posts[i]._id%>">
+                <img class="img-fluid" src="<%= posts[i].image%>">
+              </a>
+            </li>
+          <% } %>
+          </ul>
+        </div>  
+      </div>
+    </div>
+  </div>
+<%- include('partials/footer') -%>
