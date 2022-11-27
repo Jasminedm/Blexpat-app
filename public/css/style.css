@@ -1,5 +1,5 @@
 textarea{
-    height: 50px;
+    height: 100px;
     width: 380px;
 }
 .display-image{
@@ -11,3 +11,65 @@ textarea{
     background-color: #aaa;
     padding: 20px;
   }
+  a{
+    text-decoration: none;
+    color: rgb(47, 116, 93);
+  }
+  .profile{
+    background-image: url("../imgs/areal.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  .personalT{
+    background-image: url("../imgs/island.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  .feed{
+    background-image: url("../imgs/water.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  .explore{
+    background-image: url("../imgs/couplebeeach1.jpg");
+     background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  }
+  .banner{
+    height:350px; 
+    background-image: url('../imgs/experiate.jp.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 40px;
+  }
+  .plan{
+    background-image: url('../imgs/purplelip.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  .subHeadPlan{
+   display: inline-block;
+   margin-right: 5%;
+  }
+  .bg-light{
+    background-color: #c0cad4!important;
+  }
+  footer{
+    /* position: fixed; */
+    bottom: 0;
+    width: 100%;
+    
+  }
+  .border-bottom {
+    border-bottom: 1px solid #c7ebe4!important;
+}

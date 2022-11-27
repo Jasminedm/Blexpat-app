@@ -45,8 +45,9 @@ module.exports = {
   },
   getPlan: async (req, res) => {
     try {
+      
       const posts = await Post.find().sort({ createdAt: "desc" }).lean();
-      res.render("plan.ejs", { posts: posts});
+      res.render("plan.ejs", { posts: posts, user: req.user});
     } catch (err) {
       console.log(err);
     }

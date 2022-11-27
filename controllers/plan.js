@@ -23,8 +23,8 @@ createPlan: async (req, res) => {
         handicap: req.body.handicap,
         shop: req.body.shop,
         help: req.body.help,
-        kid: req.body.kidfriendly,
-        pet: req.body.petfriendly,
+        kidfriendly: req.body.kidfriendly,
+        petfriendly: req.body.petfriendly,
         user: req.user.id,
       });
       console.log("Post has been added!");

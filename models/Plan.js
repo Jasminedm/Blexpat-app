@@ -18,7 +18,7 @@ const PostSchema = new mongoose.Schema({
         default: Date.now,
   },
   budgetPaid: {
-    type: Number,
+    type: String,
     required: true,
   },
   personalnote: {
@@ -53,11 +53,11 @@ const PostSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  kid: {
+  kidfriendly: {
     type: String,
     required: true,
   },
-  pet: {
+  petfriendly: {
     type: String,
     required: true,
   },

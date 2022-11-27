@@ -1,16 +1,24 @@
 <%- include('partials/header') -%>
-<h1>Plan</h1><h2>Plan your upcomming trip</h2>
+<body class="plan">
+  
+
+
 <div class="container">
-    <div class="row mt-5">
-        <div class="col-6">
-            <div>
-                
-            </div>
-            <button><a href="/personalT">My Trips</a></button>
-            <button><a href="/planTrip">Upcomming Trips</a></button>
+    <div>
+        <div class="col">
+          <p>Hi <%= user.userName %>!, lets prepare your next home!</p>
+            <section>
+              <li class="subHeadPlan"><h6><a href="/personalT">My Trips</a></h6></li>
+              <li class="subHeadPlan"><h6><a href="/planTrip">Upcomming Trips</a></h6></li>
+            </section>
+            
             <div class="mt-5">
               <h2>My upcomming Adventure</h2>
-              <form action="/post/createPlan" enctype="multipart/form-data" method="POST">
+              <section class="container">
+                <section class="row">
+                  <section class="col-sm">
+
+              <form action="/plan/createPlan" enctype="multipart/form-data" method="POST">
                 <div class="mb-3">
                     <label for="location" class="form-label">Location</label>
                     <input type="text" class="form-control" id="location" name="location">
@@ -24,23 +32,23 @@
             <div class="mb-3">
                 <h6 name="duration">Duration:</h6>
                 <label for="arrive" class="form-label">I will Arrive</label>
-                <input type="date" class="form-control" id="arrive" name="arrive">
+                <input type="date" class="form-control" id="arrive" name="duration">
                 <label for="depart" class="form-label">Departure</label>
-                <input type="date" class="form-control" id="depart" name="depart">
+                <input type="date" class="form-control" id="depart" name="duration">
             </div>
   
             <div name ="budgetPaid" class="dropdown">
               <label>Budget:</label>  
                 <select>  
-                <option value = "1">$500 - $1000   
+                <option name ="budgetPaid" value = "1">$500 - $1000   
                 </option>  
-                <option value = "2">$1000 - $1500   
+                <option name ="budgetPaid" value = "2">$1000 - $1500   
                 </option>  
-                <option value = "3">$1500 - $2000  
+                <option name ="budgetPaid" value = "3">$1500 - $2000  
                 </option>  
-                <option value = "4">$2500 - $3000  
+                <option name ="budgetPaid" value = "4">$2500 - $3000  
                 </option> 
-                <option value = "5">$3000 - $4000  
+                <option name ="budgetPaid" value = "5">$3000 - $4000  
                 </option>  
                 </select>  
             </div><br>
@@ -49,46 +57,46 @@
   
                 <div class="mb-3">
                   <label for="notes" name="personalnote" class="form-label">Personal Notes</label>
-                  <textarea class="form-control" id="notes" name="notes"></textarea>
+                  <textarea class="form-control" id="notes" name="personalnote"></textarea>
                 </div>
-  
+              </section>
                 
-  
+                <section class="col-sm">
                 <div class="mb-3">
                   <h6 name="room">Room/Board</h6>
                  
-                 <input type="radio"  id="apartment" name="apartment">
+                 <input type="radio"  id="apartment" name="room">
                  <label for="apartment" class="form-label">Apartment</label>
                  
-                 <input type="radio"  id="fullHome" name="fullHome">
+                 <input type="radio"  id="fullHome" name="room">
                  <label for="fullHome" class="form-label">Full Home</label>
                  
-                 <input type="radio"  id="family" name="family">
+                 <input type="radio"  id="family" name="room">
                  <label for="family" class="form-label">Family</label><br>
                  
-                 <input type="radio"  id="hotel" name="hotel">
+                 <input type="radio"  id="hotel" name="room">
                  <label for="hotel" class="form-label">Hotel</label>
                  
-                 <input type="radio"  id="hostel" name="hostel">
+                 <input type="radio"  id="hostel" name="room">
                  <label for="hostel" class="form-label">Hostel</label>
                  
-                 <input type="radio"  id="airbnb" name="airbnb">
+                 <input type="radio"  id="airbnb" name="room">
                  <label for="airbnb" class="form-label">Airbnb</label><br>
                  
-                 <input type="radio"  id="motel" name="motel">
+                 <input type="radio"  id="motel" name="room">
                  <label for="motel" class="form-label">Motel</label>
                  
-                 <input type="radio"  id="Other" name="Other">
+                 <input type="radio"  id="Other" name="room">
                  <label for="Other" class="form-label">Other</label>
                 </div>
                 
                 <div class="mb-3">
                   <h6 name="healthcare">Will I need access to healthcare?</h6>
                   
-                  <input type="radio"  id="yes" name="health">
+                  <input type="radio"  id="yes" name="healthcare">
                   <label for="yes" class="form-label">Yes</label>
                   
-                  <input type="radio"  id="no" name="health">
+                  <input type="radio"  id="no" name="healthcare">
                   <label for="no" class="form-label">No</label>
                 </div>
   
@@ -96,10 +104,10 @@
                 <div class="mb-3">
                   <h6 name="allergy">Fod allergy accommodations?</h6>
                   
-                  <input type="radio"  id="yes" name="food">
+                  <input type="radio"  id="yes" name="allergy">
                   <label for="yes" class="form-label">Yes</label>
                   
-                  <input type="radio"  id="no" name="food">
+                  <input type="radio"  id="no" name="allergy">
                   <label for="no" class="form-label">No</label>
                 </div>
   
@@ -108,51 +116,51 @@
                 <div class="mb-3">
                   <h6 name="transp">Accessible transportation</h6>
                   
-                  <input type="radio"  id="yes" name="transport">
+                  <input type="radio"  id="yes" name="transp">
                   <label for="yes" class="form-label">Yes</label>
                   
-                  <input type="radio"  id="no" name="transport">
+                  <input type="radio"  id="no" name="transp">
                   <label for="no" class="form-label">No</label>
                 </div>
                 <div class="mb-3">
                   <h6 name="handicap">I need Handicap Accommodations</h6>
                   
-                  <input type="radio"  id="yes" name="access">
+                  <input type="radio"  id="yes" name="handicap">
                   <label for="yes" class="form-label">Yes</label>
                   
-                  <input type="radio"  id="no" name="access">
+                  <input type="radio"  id="no" name="handicap">
                   <label for="no" class="form-label">No</label>
                 </div>
   
                 <div class="mb-3">
                   <h6 name="shop">I want access to shopping:</h6>
                  
-                 <input type="radio"  id="mall" name="mall">
+                 <input type="radio"  id="mall" name="shop">
                  <label for="mall" class="form-label">Mall</label>
   
-                 <input type="radio"  id="market" name="market">
+                 <input type="radio"  id="market" name="shop">
                  <label for="market" class="form-label">Flee Market</label>
                  
-                 <input type="radio"  id="grocery" name="grocery">
+                 <input type="radio"  id="grocery" name="shop">
                  <label for="grocery" class="form-label">Grocery</label>
                 </div>
   
                 <div class="mb-3">
                   <h6 name="help">I need help with...?</h6>
                  
-                 <input type="radio"  id="communication" name="communication">
+                 <input type="radio"  id="communication" name="help">
                  <label for="communication" class="form-label">Communication</label>
                  
-                 <input type="radio"  id="living" name="living">
+                 <input type="radio"  id="living" name="help">
                  <label for="living" class="form-label">Finding a home</label>
                  
-                 <input type="radio"  id="eat" name="eat">
+                 <input type="radio"  id="eat" name="help">
                  <label for="eat" class="form-label">Finding food</label><br>
                  
-                 <input type="radio"  id="careOp" name="careOp">
+                 <input type="radio"  id="careOp" name="help">
                  <label for="careOp" class="form-label">Healthcare options</label>
                  
-                 <input type="radio"  id="Other" name="Other">
+                 <input type="radio"  id="Other" name="help">
                  <label for="Other" class="form-label">Other</label>
   
                   
@@ -169,8 +177,12 @@
               </form>
             </div>
         </div>
-  
-        <div class="col-6">
+      </section>
+    </section>
+  </section>
+      
+      
+        <!-- <div class="col-6">
           <ul class="row list-unstyled">
           <% for(var i=0; i<posts.length; i++) {%>
             <li class="col-6 justify-content-between mt-5">
@@ -180,8 +192,9 @@
             </li>
           <% } %>
           </ul>
-        </div>  
+        </div>   -->
       </div>
     </div>
   </div>
+</body>
 <%- include('partials/footer') -%>

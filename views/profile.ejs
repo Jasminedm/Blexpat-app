@@ -1,15 +1,24 @@
 <%- include('partials/header') -%>
+<body class="profile">
+  
+
 <div class="container">
-  <div class="row mt-5">
-      <div class="col-6">
+  <div>
+      <div class="col">
           <div>
-              <p><strong>User Name</strong>: <%= user.userName %></p>
-              <p><strong>Email</strong>: <%= user.email %></p>
+              <p>Hi <%= user.userName %>!</p>
+              <!-- <p><strong>Email</strong>: <%= user.email %></p> -->
           </div>
-          <button><a href="/personalT">My Trips</a></button>
+          <h6><a href="/personalT">My Trips</a></h6>
           <div class="mt-5">
             <h2>My Adventure</h2>
-            <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+
+            <section class="container">
+              <section class="row">
+                <section class="col-sm">
+
+                
+            <form action="/post/createPost" enctype="multipart/form-data" method="POST" name="originalname">
               <div class="mb-3">
                   <label for="location" class="form-label">Location</label>
                   <input type="text" class="form-control" id="location" name="location">
@@ -17,176 +26,180 @@
 
               <div class="mb-3">
                 <input type="file" id="image-input" accept="image/jpeg, image/png, image/jpg" name="postImg">
-        <div class="display-image" style="background-image: url('');"></div>
+            <div class="display-image" style="background-image: url('');"></div>
               </div>
 
           <div class="mb-3">
               <h6 name="duration">Duration:</h6>
               <label for="arrive" class="form-label">Arrived</label>
-              <input type="date" class="form-control" id="arrive" name="arrive">
+              <input type="date" class="form-control" id="arrive" name="duration">
               <label for="depart" class="form-label">Departure</label>
-              <input type="date" class="form-control" id="depart" name="depart">
+              <input type="date" class="form-control" id="depart" name="duration">
           </div>
 
           <div name ="budgetPaid" class="dropdown">
             <label>Budget:</label>  
               <select>  
-              <option value = "1">$500 - $1000   
+              <option name ="budgetPaid" value = "1">$500 - $1000   
               </option>  
-              <option value = "2">$1000 - $1500   
+              <option name ="budgetPaid" value = "2">$1000 - $1500   
               </option>  
-              <option value = "3">$1500 - $2000  
+              <option name ="budgetPaid" value = "3">$1500 - $2000  
               </option>  
-              <option value = "4">$2500 - $3000  
+              <option name ="budgetPaid" value = "4">$2500 - $3000  
               </option> 
-              <option value = "5">$3000 - $4000  
+              <option name ="budgetPaid" value = "5">$3000 - $4000  
               </option>  
               </select>  
           </div><br>
 
-            
-
               <div class="mb-3">
                 <label for="experience" name="exp" class="form-label">Share details!</label>
-                <textarea class="form-control" id="experience" name="experience"></textarea>
+                <textarea class="form-control" id="experience" name="exp"></textarea>
               </div>
+          </section>
 
-              
-
+          <section class="col-sm">
               <div class="mb-3">
                 <h6 name="room">Room/Board</h6>
                
-               <input type="radio"  id="apartment" name="apartment">
+               <input type="radio"  id="apartment" name="room">
                <label for="apartment" class="form-label">Apartment</label>
                
-               <input type="radio"  id="fullHome" name="fullHome">
+               <input type="radio"  id="fullHome" name="room">
                <label for="fullHome" class="form-label">Full Home</label>
                
-               <input type="radio"  id="family" name="family">
+               <input type="radio"  id="family" name="room">
                <label for="family" class="form-label">Family</label><br>
                
-               <input type="radio"  id="hotel" name="hotel">
+               <input type="radio"  id="hotel" name="room">
                <label for="hotel" class="form-label">Hotel</label>
                
-               <input type="radio"  id="hostel" name="hostel">
+               <input type="radio"  id="hostel" name="room">
                <label for="hostel" class="form-label">Hostel</label>
                
-               <input type="radio"  id="airbnb" name="airbnb">
+               <input type="radio"  id="airbnb" name="room">
                <label for="airbnb" class="form-label">Airbnb</label><br>
                
-               <input type="radio"  id="motel" name="motel">
+               <input type="radio"  id="motel" name="room">
                <label for="motel" class="form-label">Motel</label>
                
-               <input type="radio"  id="Other" name="Other">
+               <input type="radio"  id="Other" name="room">
                <label for="Other" class="form-label">Other</label>
               </div>
               
               <div class="mb-3">
                 <h6 name="healthcare">Did you utilize healthcare?</h6>
                 
-                <input type="radio"  id="yes" name="health">
+                <input type="radio"  id="yes" name="healthcare">
                 <label for="yes" class="form-label">Yes</label>
                 
-                <input type="radio"  id="no" name="health">
+                <input type="radio"  id="no" name="healthcare">
                 <label for="no" class="form-label">No</label>
               </div>
 
               
               <div class="mb-3">
-                <h6 name="allergy">Fod allergy accommodations?</h6>
+                <h6 name="allergy">Food allergy accommodations?</h6>
                 
-                <input type="radio"  id="yes" name="food">
+                <input type="radio"  id="yes" name="allergy">
                 <label for="yes" class="form-label">Yes</label>
                 
-                <input type="radio"  id="no" name="food">
+                <input type="radio"  id="no" name="allergy">
                 <label for="no" class="form-label">No</label>
               </div>
 
               <div class="mb-3">
                <h6 name="attractions">Attractions:</h6>
                
-               <input type="radio"  id="hiking" name="hiking">
+               <input type="radio"  id="hiking" name="attractions">
                <label for="hiking" class="form-label">Hiking</label>
                
-               <input type="radio"  id="boating" name="boating">
+               <input type="radio"  id="boating" name="attractions">
                <label for="boating" class="form-label">Boating</label>
                
-               <input type="radio"  id="parks" name="parks">
+               <input type="radio"  id="parks" name="attractions">
                <label for="parks" class="form-label">Parks</label><br>
                
-               <input type="radio"  id="concerts" name="concerts">
+               <input type="radio"  id="concerts" name="attractions">
                <label for="concerts" class="form-label">Concerts</label>
                
-               <input type="radio"  id="Other" name="Other">
+               <input type="radio"  id="Other" name="attractions">
                <label for="Other" class="form-label">Other</label>
               </div>
 
               <div class="mb-3">
                 <h6 name="transp">Accessible transportation</h6>
                 
-                <input type="radio"  id="yes" name="transport">
+                <input type="radio"  id="yes" name="transp">
                 <label for="yes" class="form-label">Yes</label>
                 
-                <input type="radio"  id="no" name="transport">
+                <input type="radio"  id="no" name="transp">
                 <label for="no" class="form-label">No</label>
               </div>
+
               <div class="mb-3">
                 <h6 name="handicap">Handicap Accessible</h6>
                 
-                <input type="radio"  id="yes" name="access">
+                <input type="radio"  id="yes" name="handicap">
                 <label for="yes" class="form-label">Yes</label>
                 
-                <input type="radio"  id="no" name="access">
+                <input type="radio"  id="no" name="handicap">
                 <label for="no" class="form-label">No</label>
               </div>
 
               <div class="mb-3">
                 <h6 name="shop">Shopping:</h6>
                
-               <input type="radio"  id="mall" name="mall">
+               <input type="radio"  id="mall" name="shop">
                <label for="mall" class="form-label">Mall</label>
 
-               <input type="radio"  id="market" name="market">
+               <input type="radio"  id="market" name="shop">
                <label for="market" class="form-label">Flee Market</label>
                
-               <input type="radio"  id="grocery" name="grocery">
+               <input type="radio"  id="grocery" name="shop">
                <label for="grocery" class="form-label">Grocery</label>
               </div>
 
               <div class="mb-3">
                 <h6 name="trouble">Did you have trouble with...?</h6>
                
-               <input type="radio"  id="communication" name="communication">
+               <input type="radio"  id="communication" name="trouble">
                <label for="communication" class="form-label">Communication</label>
                
-               <input type="radio"  id="living" name="living">
+               <input type="radio"  id="living" name="trouble">
                <label for="living" class="form-label">Finding a home</label>
                
-               <input type="radio"  id="eat" name="eat">
+               <input type="radio"  id="eat" name="trouble">
                <label for="eat" class="form-label">Finding food</label><br>
                
-               <input type="radio"  id="careOp" name="careOp">
+               <input type="radio"  id="careOp" name="trouble">
                <label for="careOp" class="form-label">Healthcare options</label>
                
-               <input type="radio"  id="Other" name="Other">
-               <label for="Other" class="form-label">Other</label>
-
-                
+               <input type="radio"  id="Other" name="trouble">
+               <label for="Other" class="form-label">Other</label>                
               </div>
+
               <div class="mb-3">
                 <label for="kidfriendly" class="form-label">Kid Friendly?</label>
                 <input type="checkbox"  id="kidfriendly" name="kidfriendly">
               </div>
+
               <div class="mb-3">
                 <label for="petfriendly" class="form-label">Pet Friendly?</label>
                 <input type="checkbox" id="petfriendly" name="petfriendly">
               </div> 
+
               <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
             </form>
           </div>
       </div>
+      
+    </section>
+  </section>
+    </section>
 
-      <div class="col-6">
+      <!-- <div class="col-6">
         <ul class="row list-unstyled">
         <% for(var i=0; i<posts.length; i++) {%>
           <li class="col-6 justify-content-between mt-5">
@@ -196,8 +209,9 @@
           </li>
         <% } %>
         </ul>
-      </div>  
+      </div>   -->
     </div>
   </div>
 </div>
+</body>
 <%- include('partials/footer') -%>

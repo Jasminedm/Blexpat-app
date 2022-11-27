@@ -18,7 +18,7 @@ const PostSchema = new mongoose.Schema({
         default: Date.now,
   },
   budgetPaid: {
-    type: Number,
+    type: String,
     required: true,
   },
   exp: {
