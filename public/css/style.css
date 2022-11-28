@@ -1,3 +1,19 @@
+/* Log In */
+.logpic{
+  background-image: url("../imgs/takeoff.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+/* .logmidpic{
+  background-image: url("../imgs/follow\ dreamblackgirl.webp");
+  background-position: ;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: contain;
+} */
+/* INPUT PAGES */
 textarea{
     height: 100px;
     width: 380px;
@@ -15,6 +31,7 @@ textarea{
     text-decoration: none;
     color: rgb(47, 116, 93);
   }
+  /* ALL PAGES */
   .profile{
     background-image: url("../imgs/areal.jpg");
     background-position: center center;
@@ -36,6 +53,7 @@ textarea{
     background-attachment: fixed;
     background-size: cover;
   }
+  /* EXPLORE */
   .explore{
     background-image: url("../imgs/couplebeeach1.jpg");
      background-position: center center;
@@ -50,6 +68,8 @@ textarea{
     background-size: cover;
     margin-bottom: 40px;
   }
+  /* END EXPLORE */
+  /* PLAN */
   .plan{
     background-image: url('../imgs/purplelip.jpg');
     background-position: center center;
@@ -61,6 +81,8 @@ textarea{
    display: inline-block;
    margin-right: 5%;
   }
+  /* PLAN END */
+  /* FOOTER */
   .bg-light{
     background-color: #c0cad4!important;
   }
@@ -70,6 +92,10 @@ textarea{
     width: 100%;
     
   }
+  .portfolio {
+    color: rgb(37, 122, 146);
+}
   .border-bottom {
     border-bottom: 1px solid #c7ebe4!important;
 }
+/* FOOTER END */
