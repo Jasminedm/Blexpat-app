@@ -1,6 +1,7 @@
 const cloudinary = require("../middleware/cloudinary");
 const Post = require("../models/Post");
 const Comment = require("../models/Comment");
+const Plan = require("../models/Plan");
 
 module.exports = {
   getProfile: async (req, res) => {
@@ -20,17 +21,24 @@ module.exports = {
     }
   },
   getMyTrips: async (req, res) => {
+    console.log(req.body)
     try {
-      const posts = await Post.find().sort({ createdAt: "desc" }).lean();
-      res.render("personalT.ejs", { posts: posts});
+      
+      
+      const id = await Post.findById(req.params.id)
+      const post = await Post.find({ user: req.user.id });
+      
+      
+      res.render("personalT.ejs", { post: post, user: req.user, id: id });
     } catch (err) {
       console.log(err);
     }
   },
   getPlanTrip: async (req, res) => {
     try {
-      const posts = await Post.find().sort({ createdAt: "desc" }).lean();
-      res.render("planTrip.ejs", { posts: posts});
+      const id = await Plan.findById(req.params.id)
+      const plan = await Plan.find({ user: req.user.id });
+      res.render("planTrip.ejs", { plan: plan, user: req.user, id: id});
     } catch (err) {
       console.log(err);
     }
@@ -38,7 +46,17 @@ module.exports = {
   getExplore: async (req, res) => {
     try {
       const posts = await Post.find().sort({ createdAt: "desc" }).lean();
+
       res.render("explore.ejs", { posts: posts});
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getShowPlan: async (req, res) => {
+    try {
+      const plan = await Plan.findById(req.params.id);
+      
+      res.render("showPlan.ejs", { plan: plan, user: req.user});
     } catch (err) {
       console.log(err);
     }
@@ -52,7 +70,16 @@ module.exports = {
       console.log(err);
     }
   },
-  
+  // getPopPlan: async (req, res) => {
+  //   try {
+  //     const plan = await Plan.findById(req.params.id);
+      
+  //     res.render("planTrip.ejs", { plan: plan, user: req.user});
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // },
+
   getPost: async (req, res) => {
     try {
       const post = await Post.findById(req.params.id);
@@ -62,6 +89,26 @@ module.exports = {
       console.log(err);
     }
   },
+  // getPopPost: async (req, res) => {
+  //   try {
+  //     const post = await Post.findById(req.params.id);
+      
+  //     res.render("personalT.ejs", { post: post, user: req.user});
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // },
+  getShowPost: async (req, res) => {
+    try {
+      const post = await Post.findById(req.params.id);
+      
+      res.render("showPlan.ejs", { post: post, user: req.user});
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  
+
   createPost: async (req, res) => {
     try {
       // Upload image to cloudinary
@@ -75,12 +122,8 @@ module.exports = {
         budgetPaid: req.body.budgetPaid,
         exp: req.body.exp,
         room: req.body.room,
-        healthcare: req.body.healthcare,
-        allergy: req.body.allergy,
-        attractions: req.body.attractions,
         transp: req.body.transp,
         handicap: req.body.handicap,
-        shop: req.body.shop,
         trouble: req.body.trouble,
         kidfriendly: req.body.kidfriendly,
         petfriendly: req.body.petfriendly,

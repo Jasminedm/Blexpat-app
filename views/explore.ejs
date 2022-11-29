@@ -1,8 +1,33 @@
 <%- include('partials/header') -%>
 <body class="explore">
-  
+  <section class="mapSect">
+    <div name ="budgetPaid" class="dropdown">
+      <label>Location:</label>  
+        <select>  
+        <option value = "1">Canada   
+        </option>  
+        <option value = "2">Japan   
+        </option>  
+        <option value = "3">United Kingdom  
+        </option>  
+        <option value = "4">France
+        </option> 
+        <option value = "5">Australia 
+        </option>  
+        </select>  
+    </div><br>
+  <iframe
+  width="1000"
+  height="250"
+  style="border:0"
+  loading="lazy"
+  allowfullscreen
+  referrerpolicy="no-referrer-when-downgrade"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyC0F0X8mvjnkAdC9W8R2l7HruLwmxwfPd8&q=Space+Needle,Seattle+WA">
+</iframe>
+</section>
 
-<h1>Explore</h1><h2>-Search by location and/or price to see related post</h2>
+<!-- <h1>Explore</h1><h2>-Search by location and/or price to see related post</h2>
 <section>
     <div name ="budgetPaid" class="dropdown">
         <label>Location:</label>  
@@ -35,6 +60,6 @@
           </option>  
           </select>  
       </div>
-</section>
+</section> -->
 </body>
 <%- include('partials/footer') -%>

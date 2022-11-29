@@ -1,0 +1,19 @@
+<%- include('partials/header') -%>
+<section class="showPlanSect">
+<h1><%= plan.location %></h1> <br>
+<img src="<%= plan.postImg %>" alt="">
+<section>
+    <h1>Create a moving checklist</h1><br>
+    <ul id="uL">
+        <li><input class="checkBox" type="checkbox"><input class="textInput" type="text"></li>
+    </ul><br>
+    <button class="nextItem" type="button">Add Next Item</button>
+    <button class="done" type="button">Done</button>
+    <button id="clear" type="button" >Clear All Task</button>
+    
+    <h2 class="congrats"></h2>
+</section>
+</section>
+
+<script src="../JS/main.js"></script>
+<%- include('partials/footer') -%>

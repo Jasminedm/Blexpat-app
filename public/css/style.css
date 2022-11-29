@@ -1,3 +1,7 @@
+li{
+  list-style-type: none;
+}
+
 /* Log In */
 .logpic{
   background-image: url("../imgs/takeoff.jpg");
@@ -61,6 +65,9 @@ textarea{
   background-attachment: fixed;
   background-size: cover;
   }
+  .mapSect{
+text-align: center;
+  }
   .banner{
     height:350px; 
     background-image: url('../imgs/experiate.jp.jpg');
@@ -77,9 +84,17 @@ textarea{
     background-attachment: fixed;
     background-size: cover;
   }
+  .quizSect{
+    text-align: center;
+  }
   .subHeadPlan{
    display: inline-block;
    margin-right: 5%;
+  }
+
+  /* Show Plan */
+  .showPlanSect{
+    text-align: center;
   }
   /* PLAN END */
   /* FOOTER */

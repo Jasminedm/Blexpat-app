@@ -5,6 +5,10 @@ const PostSchema = new mongoose.Schema({
     type: String,
     
   },
+  postImg: {
+    type: String,
+    require: true,
+  },
   cloudinaryId: {
     type: String,
     require: true,
@@ -29,27 +33,11 @@ const PostSchema = new mongoose.Schema({
     type: String,
     
   },
-  healthcare: {
-    type: String,
-    
-  },
-  allergy: {
-    type: String,
-    
-  },
-  attractions: {
-    type: String,
-    
-  },
   transp: {
     type: String,
     
   },
   handicap: {
-    type: String,
-    
-  },
-  shop: {
     type: String,
     
   },
