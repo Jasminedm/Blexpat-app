@@ -1,6 +1,7 @@
 const cloudinary = require("../middleware/cloudinary");
 const Plan = require("../models/Plan");
 const Comment = require("../models/Comment");
+const List = require("../models/list");
 
 module.exports = {
 
@@ -34,4 +35,19 @@ createPlan: async (req, res) => {
       console.log(err);
     }
   },
+
+  //save this list
+  updateList: async (req, res) => {
+    try {
+      const update = req.body.itenerary;
+      const plan = await List.findOneAndUpdate(req.params.id, update);
+       
+      
+      console.log("Post has been added!");
+      
+    } catch (err) {
+      console.log(err);
+    }
+  },
 }
+

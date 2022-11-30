@@ -1,19 +1,58 @@
 <%- include('partials/header') -%>
+<link rel="stylesheet" href="/css/countdown.css">
 <section class="showPlanSect">
+    <div id="countdown">
+        <div id='tiles' data-trip="<%= plan.arrive%>"></div>
+        <div class="labels">
+          <li>Days</li>
+          <li>Hours</li>
+          <li>Mins</li>
+          <li>Secs</li>
+        </div>
+      </div>
+<br>
 <h1><%= plan.location %></h1> <br>
 <img src="<%= plan.postImg %>" alt="">
+
 <section>
     <h1>Create a moving checklist</h1><br>
     <ul id="uL">
-        <li><input class="checkBox" type="checkbox"><input class="textInput" type="text"></li>
+        <li><input class="checkBox" type="checkbox"><input class="textInput" type="text" name="list"></li>
     </ul><br>
     <button class="nextItem" type="button">Add Next Item</button>
     <button class="done" type="button">Done</button>
     <button id="clear" type="button" >Clear All Task</button>
     
     <h2 class="congrats"></h2>
-</section>
-</section>
 
+    <section class="mapSect">
+      <div name ="budgetPaid" class="dropdown">
+        <div class="container">
+          <input id="from" placeholder="your location" />
+          <input id="to" placeholder="your destination" />
+          <button class="get"><h3>get directions</h3></button>
+          <div id="googleMap"></div>
+          <div id="output"></div>
+          <ul id="steps"></ul>
+        </div>
+  </section> 
+  <input class="category" type="text" id="category" placeholder="category">
+  <input class="place" type="text" id="place" placeholder="place">
+  <button onclick="getAttractions()" class="attractions">Get places</button>
+
+<div>
+  <ul class="pictures">
+    
+  </ul>
+</div>
+
+</section>
+</section>
+<script src="../JS/countdown.js"></script>
 <script src="../JS/main.js"></script>
+<script>
+const id = '<%= plan._id %>'
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0F0X8mvjnkAdC9W8R2l7HruLwmxwfPd8&libraries=places"></script>
+<script src="../JS/maps.js"></script>
 <%- include('partials/footer') -%>

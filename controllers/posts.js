@@ -3,6 +3,9 @@ const Post = require("../models/Post");
 const Comment = require("../models/Comment");
 const Plan = require("../models/Plan");
 
+
+
+
 module.exports = {
   getProfile: async (req, res) => {
     try {
@@ -45,6 +48,7 @@ module.exports = {
   },
   getExplore: async (req, res) => {
     try {
+      
       const posts = await Post.find().sort({ createdAt: "desc" }).lean();
 
       res.render("explore.ejs", { posts: posts});
@@ -54,6 +58,7 @@ module.exports = {
   },
   getShowPlan: async (req, res) => {
     try {
+      
       const plan = await Plan.findById(req.params.id);
       
       res.render("showPlan.ejs", { plan: plan, user: req.user});

@@ -65,8 +65,14 @@ textarea{
   background-attachment: fixed;
   background-size: cover;
   }
+  #googleMap{
+    
+    width: 100%;
+    height: 200px;
+  }
   .mapSect{
 text-align: center;
+border: 1px solid black;
   }
   .banner{
     height:350px; 

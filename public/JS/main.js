@@ -31,7 +31,14 @@ function isCompleted(){
     //  userCheck.forEach(userC => userC.value = '') 
      document.querySelector('.congrats').innerText = ''     
  }
+//  function getInfo(){
+//     fetch(`/showPlan/${id}`, {method: 'POST'})
+//     const update = { activities: [{checkbox: true, text: text}] };
 
+//     .catch(err => {
+//         console.log(`error ${err}`)
+//     })
+// }
 
 
 

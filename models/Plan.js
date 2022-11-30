@@ -13,11 +13,11 @@ const PostSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
-  arrive: {
+  depart: {
     type: Date,
     default: Date.now,
 },
-  depart: {
+  arrive: {
         type: Date,
         default: Date.now,
   },
