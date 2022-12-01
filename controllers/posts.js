@@ -66,6 +66,15 @@ module.exports = {
       console.log(err);
     }
   },
+  putItenerary: async (req, res) => {
+    try {
+      const updateIten = await Plan.findByIdAndUpdate(req.body.id, {itenerary: req.body.itenerary})
+      console.log("heyyy", req.body.itenerary, req.body.id)
+      res.redirect(`/showPlan/${req.body.id}`);
+    } catch (err) {
+      console.log(err);
+    }
+  },
   getPlan: async (req, res) => {
     try {
       

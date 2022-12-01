@@ -12,6 +12,8 @@ function nextInput(){
     nextItem.appendChild(checkB)
     nextItem.appendChild(nextInputSpace)
     document.querySelector('#uL').appendChild(nextItem)
+    console.log(document.querySelector("#uL").childNodes)
+    
 }
 
 document.querySelector('.done').addEventListener('click', isCompleted)
@@ -25,20 +27,47 @@ function isCompleted(){
  document.querySelector('#clear').addEventListener('click', clearTask)
 
  function clearTask(){
-     let userInput = document.querySelectorAll('.textInput') 
-     userInput.forEach(userI => userI.value = '') 
-    //  let userCheck = document.querySelectorAll('.checkBox') 
-    //  userCheck.forEach(userC => userC.value = '') 
+    let ulinputs = document.querySelector("#uL") 
+    const nextItem = document.createElement('li')
+    const nextInputSpace = document.createElement('input')
+    nextInputSpace.setAttribute('class', 'textInput')
+    const checkB = document.createElement('input')
+    checkB.setAttribute('class', 'checkBox')
+     checkB.setAttribute('type', 'checkbox')
+     nextItem.appendChild(checkB)
+     nextItem.appendChild(nextInputSpace)
+     console.log(ulinputs.childNodes)
+    ulinputs.innerHTML = ''
+    document.querySelector('#uL').appendChild(nextItem)
      document.querySelector('.congrats').innerText = ''     
  }
-//  function getInfo(){
-//     fetch(`/showPlan/${id}`, {method: 'POST'})
-//     const update = { activities: [{checkbox: true, text: text}] };
-
-//     .catch(err => {
-//         console.log(`error ${err}`)
-//     })
-// }
+ function updateItenerary(id){
+    let itenerary = []
+    let text = document.querySelectorAll(".textInput")
+    for(let i=0; i<text.length; i++){
+        itenerary.push(text[i].value)
+    }
+    console.log(itenerary)
+    fetch("/showP", {
+        method: 'PUT', // or 'PUT'
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ 
+            id: id,
+            itenerary: itenerary
+        }), 
+        
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log('Success:', data);
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+   
+}
 
 
 

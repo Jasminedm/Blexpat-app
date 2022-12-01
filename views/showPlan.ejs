@@ -1,6 +1,7 @@
 <%- include('partials/header') -%>
 <link rel="stylesheet" href="/css/countdown.css">
 <section class="showPlanSect">
+  <section id="count">
     <div id="countdown">
         <div id='tiles' data-trip="<%= plan.arrive%>"></div>
         <div class="labels">
@@ -10,18 +11,26 @@
           <li>Secs</li>
         </div>
       </div>
+  </section>
 <br>
 <h1><%= plan.location %></h1> <br>
 <img src="<%= plan.postImg %>" alt="">
 
 <section>
-    <h1>Create a moving checklist</h1><br>
+    <h1>Build your Itenerary</h1><br>
     <ul id="uL">
+      <% if(plan.itenerary){ %>
+        <% for(let i = 0; i<plan.itenerary.length;i++){ %>
+          <li><input class="checkBox" type="checkbox"><input class="textInput" type="text" value="<%= plan.itenerary[i] %>" name="list"></li>
+      <% } %>
+      <% }else {%>
         <li><input class="checkBox" type="checkbox"><input class="textInput" type="text" name="list"></li>
+     <% } %>
     </ul><br>
-    <button class="nextItem" type="button">Add Next Item</button>
-    <button class="done" type="button">Done</button>
-    <button id="clear" type="button" >Clear All Task</button>
+    <button class="nextItem" type="button">Add New</button>
+    <button onclick="updateItenerary('<%= plan._id %>')" class="save" type="button">Save</button>
+    <!-- <button class="done" type="button">Done</button> -->
+    <button id="clear" onclick="clearTask()" type="button" >Clear All</button>
     
     <h2 class="congrats"></h2>
 

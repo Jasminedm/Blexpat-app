@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 
 const PostSchema = new mongoose.Schema({
+  itenerary:{
+    type: [String],
+    default: [],
+  },
   location: {
     type: String,
     

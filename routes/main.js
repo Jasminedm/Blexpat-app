@@ -12,6 +12,7 @@ router.get("/profile", ensureAuth, postsController.getProfile);
 router.get("/personalT", ensureAuth, postsController.getMyTrips);
 router.get("/showPost", ensureAuth, postsController.getShowPost);
 router.get("/showPost/:id", ensureAuth, postsController.getShowPost);
+router.put("/showP", ensureAuth, postsController.putItenerary);
 
 router.get("/planTrip", ensureAuth, postsController.getPlanTrip);
 router.get("/showPlan", ensureAuth, postsController.getShowPlan);

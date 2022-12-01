@@ -1,3 +1,10 @@
+// API WEB LINKS
+// https://apidocs.geoapify.com/docs/places/#url-examples
+// https://developers.amadeus.com/self-service/category/destination-content/api-doc/points-of-interest/api-reference
+// https://developers.google.com/maps/documentation/javascript/places#find_place_requests
+// https://developers.google.com/maps/documentation/javascript/geocoding#Geocoding
+// LINK TO THIS PROJECT IN GOOGLE API ACCT https://console.cloud.google.com/google/maps-apis/credentials?project=blexpat
+
 const coordinates = { lat: 42.361145, lng: -71.057083 };
     const mapOptions = {
       center: coordinates,
@@ -109,7 +116,8 @@ document.querySelector(".get").addEventListener("click", () => {
   // autocomplete all inputs
   function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
-      const getImg = document.querySelector(".pictures")
+      let getImg = document.querySelector(".pictures")
+      getImg.innerHTML = ""
       //grab pictures quereyselector
       for (var i = 0; i < results.length; i++) {
         var place = results[i];
@@ -122,7 +130,7 @@ document.querySelector(".get").addEventListener("click", () => {
         if(results[i].photos){
           placePicture.src = results[i].photos[0].getUrl()
         }else {
-          placePicture.src = 'https://emojipedia-us.s3.amazonaws.com/source/microsoft-teams/337/question-mark_2753.png'
+          placePicture.src = 'https://i.pinimg.com/736x/62/b9/85/62b9851f99c3fd160709b4680a908f00--night-nurse-mystery-box.jpg'
         }
         
         
