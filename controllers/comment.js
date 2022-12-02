@@ -14,7 +14,7 @@ module.exports = {
         user: req.user.id,
       });
       console.log("Comment has been added!");
-      res.redirect(`/post/${req.params.id}`);
+      res.redirect(`/feedPlan/${req.params.id}`);
     } catch (err) {
       console.log(err);
     }
@@ -29,9 +29,9 @@ module.exports = {
       // Delete post from db
       await Post.remove({ _id: req.params.id });
       console.log("Deleted Post");
-      res.redirect("/feed");
+      res.redirect("/feedPlan");
     } catch (err) {
-      res.redirect("/profile");
+      res.redirect("/feed");
     }
   },
 };

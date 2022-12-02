@@ -1,0 +1,24 @@
+<%- include('partials/header') -%>
+<section class="feedPlanSect">
+<h1><%= plan.location %></h1> <br>
+<img src="<%= plan.postImg %>" alt="">
+<h3><%= plan.personalnote %></h3>
+
+<% if(plan.healthcare){ %>
+    <h5>I used healthcare</h5>
+<% } %>
+
+
+
+<form action="/comment/createComment/<%= plan._id %>" method="post">
+    <textarea name="comment" id="" cols="30" rows="10"></textarea>
+    <button type="submit">Comment</button>
+    <!-- <button>Delete</button>  -->
+  </form>
+  <% for(let i = 0; i < comment.length; i++){ %>
+    <h6><%= comment[i].comment %></h6>
+ <% } %>
+</section>
+
+<!-- ADD COMMENTING!!! -->
+<%- include('partials/footer') -%>

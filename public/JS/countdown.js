@@ -13,7 +13,7 @@ function getCountdown(){
 	// find the amount of "seconds" between now and trip
 	var today = new Date().getTime();
 	var difference = (trip - today) / 1000;
-
+if(difference < 0){document.querySelector("#countdown").classList.add("hideCountdown")}
 	days = pad(parseInt(difference / 86400));
 	difference = difference % 86400;
 		 

@@ -17,8 +17,19 @@ module.exports = {
   },
   getFeed: async (req, res) => {
     try {
-      const posts = await Post.find().sort({ createdAt: "desc" }).lean();
-      res.render("feed.ejs", { posts: posts});
+      const id = await Plan.findById(req.params.id)
+      const plan = await Plan.find({ user: req.user.id });
+      res.render("feed.ejs", { plan: plan, user: req.user, id: id});
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getfeedPlan: async (req, res) => {
+    try {
+      
+      const plan = await Plan.findById(req.params.id);
+      const comment = await Comment.find().sort({ createdAt: "desc" }).lean();;
+      res.render("feedPlan.ejs", { plan: plan, user: req.user, comment: comment});
     } catch (err) {
       console.log(err);
     }

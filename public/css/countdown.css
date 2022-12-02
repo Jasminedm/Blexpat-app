@@ -1,6 +1,4 @@
-#count{
 
-}
 
 #countdown{
 	width: 465px;
@@ -98,3 +96,7 @@
 	text-transform: uppercase;
 	display: inline-block;
 }
+.hideCountdown{
+	display: none !important;
+
+	}

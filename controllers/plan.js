@@ -9,7 +9,7 @@ createPlan: async (req, res) => {
     try {
       // Upload image to cloudinary
       const result = await cloudinary.uploader.upload(req.file.path); 
-
+console.log(req)
       await Plan.create({
         location: req.body.location,
         postImg: result.secure_url,
@@ -17,12 +17,12 @@ createPlan: async (req, res) => {
         arrive: req.body.arrive,
         depart: req.body.depart,
         budgetPaid: req.body.budgetPaid,
-        personalnote: req.body.exp,
+        personalnote: req.body.personalnote,
         room: req.body.room,
-        healthcare: req.body.healthcare,
-        allergy: req.body.allergy,
-        transp: req.body.transp,
-        handicap: req.body.handicap,
+        healthcare: req.body.healthcare == 'on',
+        allergy: req.body.allergy == 'on',
+        transp: req.body.transp == 'on',
+        handicap: req.body.handicap == 'on',
         shop: req.body.shop,
         help: req.body.help,
         kidfriendly: req.body.kidfriendly,

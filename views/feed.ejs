@@ -1,20 +1,32 @@
 <%- include('partials/header') -%>
 <body class="feed">
   
-
-<h1>Feed</h1><h2>-See most recent post from all members!</h2>
-  <div class="container">
-    <div class="row justify-content-center mt-5">
-      <ul class="row list-unstyled">
-        <% for(var i=0; i<posts.length; i++) {%>
-          <li class="col-6 justify-content-between mt-5">
-            <a href="/post/<%= posts[i]._id%>">
-              <img class="img-fluid" src="<%= posts[i].image %>">
-            </a>
-          </li>
-        <% } %>
-        </ul>
+  <!--Section: News of the day-->
+  <section class="feedSect">
+  <% for(var i=0; i < plan.length; i++) { %>
+<div class="row gx-5">
+  <div class="col-md-6 mb-4">
+    <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
+      <div class="feedPhotos" style="background-image: url('<%= plan[i].postImg %>');"></div>
+      <a href="#!">
+        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+      </a>
     </div>
-  </div>  
+  </div>
+
+  <div class="col-md-6 mb-4">
+    <!-- <span class="badge bg-danger px-2 py-1 shadow-1-strong mb-3">See what others are planning!</span> -->
+    <h4><strong><%= plan[i].location %></strong></h4>
+    <p class="text-muted">
+      <!-- <h3><%= plan[i].personalnote %></h3> -->
+    </p>
+    <a href="/feedPlan/<%= plan[i]._id %>">
+    <button type="button" class="btn btn-primary">View more</button>
+  </a>
+  </div>
+</div>
+<% } %>
+</section>
+<!--Section: News of the day-->
 </body>
 <%- include('partials/footer') -%>

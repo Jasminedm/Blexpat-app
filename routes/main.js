@@ -19,6 +19,8 @@ router.get("/showPlan", ensureAuth, postsController.getShowPlan);
 router.get("/showPlan/:id", ensureAuth, postsController.getShowPlan);
 router.put("/showPlan/:id", ensureAuth, planController.updateList);
 
+router.get("/feedPlan/:id", ensureAuth, postsController.getfeedPlan);
+
 
 router.get("/explore", ensureAuth, postsController.getExplore);
 router.get("/plan", ensureAuth, postsController.getPlan);
