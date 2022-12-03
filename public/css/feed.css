@@ -1,0 +1,14 @@
+.feedBanner{
+    display: block;
+    height: 200px;
+}
+.feedImgs{
+    width: 100px;
+    height: 100px;
+}
+.hide{
+    display: none;
+}
+.card{
+    width: 30%;
+}

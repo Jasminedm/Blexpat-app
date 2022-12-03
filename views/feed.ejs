@@ -1,7 +1,48 @@
 <%- include('partials/header') -%>
+<link rel="stylesheet" href="css/feed.css">
 <body class="feed">
   <section class="feedSect">
-  <% for(var i=0; i < plan.length; i++) { %>
+    <section class="row feedBanner">
+      
+      
+        <div class="col-sm">
+        <label>Location:</label>  
+        <select class="feedLocateSearch">  
+          
+          <% let planSet = new Set() %>
+          <% for(let i=0; i<plan.length; i++){ %>
+           <%  planSet.add(plan[i].location) %>
+        <% } %>
+          <% for(let item of planSet){ %>
+           
+           
+        <option value="<%= item %>"><%= item %>   
+        </option>  
+        <% } %>
+        </select>  
+    </div>
+ 
+      
+      
+    </section>
+    <div class="card-deck ">
+    <% for(var i=0; i < plan.length; i++) { %>
+    
+      <div class="card <%= plan[i].location %>">
+        <img class="card-img-top" src="<%= plan[i].postImg %>" style="width: 100%;height: auto;" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><%= plan[i].location %></h5>
+          <p class="card-text"><%= plan[i].personalnote %></p>
+        </div>
+        <div class="card-footer">
+          <a href="/feedPlan/<%= plan[i]._id %>"><small class="text-muted">View More</small></a>
+        </div>
+        </div>
+        <% } %>
+      </div>
+
+
+  <!-- <% for(var i=0; i < plan.length; i++) { %>
 <div class="row gx-5">
   <div class="col-md-6 mb-4">
     <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
@@ -12,19 +53,20 @@
     </div>
   </div>
 
-  <div class="col-md-6 mb-4">
+  <div class="col-md-6 mb-4"> -->
     <!-- <span class="badge bg-danger px-2 py-1 shadow-1-strong mb-3">See what others are planning!</span> -->
-    <h4><strong><%= plan[i].location %></strong></h4>
-    <p class="text-muted">
+    <!-- <h4><strong><%= plan[i].location %></strong></h4>
+    <p class="text-muted"> -->
       <!-- <h3><%= plan[i].personalnote %></h3> -->
-    </p>
+    <!-- </p>
     <a href="/feedPlan/<%= plan[i]._id %>">
     <button type="button" class="btn btn-primary">View more</button>
   </a>
   </div>
 </div>
-<% } %>
+<% } %> --> 
 </section>
 <!--Section: News of the day-->
+<script src="/JS/feed.js"></script>
 </body>
 <%- include('partials/footer') -%>
