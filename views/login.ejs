@@ -17,6 +17,7 @@
       integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
       crossorigin="anonymous"
     />
+    <script src="https://kit.fontawesome.com/5953fc6165.js" crossorigin="anonymous"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -24,23 +25,22 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/footer.css">
   </head>
   
 
 
+<body class="loginBody">
+  
 
 
-  <section class="vh-100 logpic" style="background-color: #8b8284;">
-    <div class="container py-5 h-100">
+  <section class="vh-100 logpic">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col col-xl-10">
-          <div class="card" style="border-radius: 1rem;">
+          <div class="card" style="border-radius: 1rem;background-color: rgba(195, 227, 246, 0.5);">
             <div class="row g-0">
-              <div class="col-md-6 col-lg-5 d-none d-md-block logmidpic">
-                <img src="/imgs/follow dreamblackgirl.webp"
-                  alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
-              </div>
-              <div class="col-md-6 col-lg-7 d-flex align-items-center">
+              
+              <div>
                 <div class="card-body p-4 p-lg-5 text-black">
                   <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
                     <div class="alert alert-danger"><%= el.msg %></div>
@@ -70,8 +70,9 @@
                           name="password"
                         />
                       </div>
-                      <button type="submit" class="btn btn-primary">Login</button>
+                      <a href="/" class="btn arrow"><i class="fa fa-circle-arrow-left"></i></a><button type="submit" class="btn btn-primary">Login</button> <a href="/signup"><button type="button" class="btn btn-primary">Create an account</button></a>
                     </form>
+                    
   
                 </div>
               </div>
@@ -82,7 +83,7 @@
     </div>
   </section>
 </main>
-
+</body>
 
 <%- include('partials/footer') -%>
 

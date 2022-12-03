@@ -1,22 +1,44 @@
+.loginBody{
+color: black;
+
+}
+.signUpBody{
+  color: black;
+}
+
 li{
   list-style-type: none;
 }
 
 /* Log In */
 .logpic{
-  background-image: url("../imgs/takeoff.jpg");
+  background-image: url("../imgs/blueCity.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  padding: 10%;
 }
-/* .logmidpic{
-  background-image: url("../imgs/follow\ dreamblackgirl.webp");
-  background-position: ;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: contain;
-} */
+.indexLogoPic{
+  padding: 0%;
+}
+.img-fluid {
+  max-width: 100%;
+  height: 100%;
+  background-image: url("../imgs/blackgrl.jpg");
+}
+.arrow:hover{
+color: whitesmoke;
+
+}
+
+/* SIGNUP */
+.signUpSect{
+  padding-top: 0;
+}
+.form-text{
+  color: rgb(42, 49, 56);
+}
 /* INPUT PAGES */
 textarea{
     height: 100px;
@@ -98,6 +120,9 @@ border: 1px solid black;
     background-attachment: fixed;
     background-size: cover;
   }
+  .planSect{
+    padding: 10%;
+  }
   .quizSect{
     text-align: center;
   }
@@ -115,19 +140,16 @@ border: 1px solid black;
   }
   /* PLAN END */
   /* FOOTER */
-  .bg-light{
-    background-color: #c0cad4!important;
-  }
+  
   footer{
     /* position: fixed; */
     bottom: 0;
-    width: 100%;
-    
+    width: 100%; 
   }
-  .portfolio {
+  /* .portfolio {
     color: rgb(37, 122, 146);
 }
   .border-bottom {
     border-bottom: 1px solid #c7ebe4!important;
-}
+} */
 /* FOOTER END */
