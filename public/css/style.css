@@ -58,20 +58,20 @@ textarea{
     color: rgb(47, 116, 93);
   }
   /* ALL PAGES */
-  .profile{
+  /* .profile{
     background-image: url("../imgs/areal.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-  }
-  .personalT{
+  } */
+  /* .personalT{
     background-image: url("../imgs/island.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-  }
+  } */
   .feed{
     background-image: url("../imgs/blackgrl.jpg");
     background-position: center center;
@@ -81,7 +81,14 @@ textarea{
   }
   .feedSect{
     text-align: center;
-    padding: 10%;
+    padding: 20%;
+  }
+  .planTripSect{
+    text-align: center;
+    padding: 20%;
+  }
+  .planTripbanner{
+height: 100px;
   }
   .feedPhotos{
     width: 100%;

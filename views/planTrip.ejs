@@ -1,21 +1,32 @@
 <%- include('partials/header') -%>
-<section class="row banner"></section>
-<h1>Upcomming Trips - see any upcomming trips after posted</h1>
-<div class="row row-cols-1 row-cols-md-2 g-4">
+<link rel="stylesheet" href="css/feed.css">
+<body class="planTripBody">
+  <section class="planTripSect">
+
+  
+<section class="row planTripbanner"></section>
+<!-- <h1>Upcomming Trips - see any upcomming trips after posted</h1> -->
+<section class="container">
+<div class="card-deck row">
   <% for(var i=0; i < plan.length; i++) { %>
-    <div class="col">
-      <div class="card">
-        <a href="/showPlan/<%= plan[i]._id %>">
-        <img src="<%= plan[i].postImg %>" class="card-img-top" alt="...">
-      </a>
+    <div class="card col-sm-3">       
+        <img src="<%= plan[i].postImg %>" class="card-img-top" style="width: 100%;height: auto;" alt="...">
         <div class="card-body">
           <h5 class="card-title"><%= plan[i].location %></h5>
-          <p class="card-text"><%= plan[i].personalnote %></p>
         </div>
-      </div>
+        <div class="card-footer">
+          <a href="/showPlan/<%= plan[i]._id %>"><small class="text-muted">View More</small></a>
+        </div>
     </div>
     <% } %>
+  </section>
+
     
+  
+
+
+
+
     <!-- <div class="col">
       <div class="card">
         <img src="..." class="card-img-top" alt="...">
@@ -44,4 +55,6 @@
       </div>
     </div> -->
   </div>
+</section>
+</body>
 <%- include('partials/footer') -%>

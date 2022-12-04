@@ -25,14 +25,14 @@
       
       
     </section>
-    <div class="card-deck ">
+    <section class="container">
+    <div class="card-deck row">
     <% for(var i=0; i < plan.length; i++) { %>
-    
-      <div class="card <%= plan[i].location %>">
+      <div class="card <%= plan[i].location %> col-sm-3">
         <img class="card-img-top" src="<%= plan[i].postImg %>" style="width: 100%;height: auto;" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title"><%= plan[i].location %></h5>
-          <p class="card-text"><%= plan[i].personalnote %></p>
+          <!-- <p class="card-text"><%= plan[i].personalnote %></p> -->
         </div>
         <div class="card-footer">
           <a href="/feedPlan/<%= plan[i]._id %>"><small class="text-muted">View More</small></a>
@@ -40,6 +40,9 @@
         </div>
         <% } %>
       </div>
+    </section>
+
+      
 
 
   <!-- <% for(var i=0; i < plan.length; i++) { %>
