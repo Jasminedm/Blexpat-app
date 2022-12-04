@@ -87,11 +87,11 @@ document.querySelector(".get").addEventListener("click", () => {
         const distanceInMiles = result.routes[0].legs[0].distance.text;
         const steps = result.routes[0].legs[0].steps;
         const ul = document.querySelector("#steps");
-        for (let i = 0; i < steps.length; i++) {
-          let instruction = document.createElement("li");
-          instruction.innerHTML = steps[i].instructions;
-          ul.appendChild(instruction);
-        }
+        // for (let i = 0; i < steps.length; i++) {
+        //   let instruction = document.createElement("li");
+        //   instruction.innerHTML = steps[i].instructions;
+        //   ul.appendChild(instruction);
+        // }
   
         const output = document.querySelector("#output");
         output.innerText = `It'll take you ${distanceInMiles} to get from ${from} to ${to}.`;
@@ -124,9 +124,14 @@ document.querySelector(".get").addEventListener("click", () => {
         //make new pic element, set src to results[i].photos[0].getUrl()
         //append img element to pic div
         let listItem = document.createElement('li')
+        listItem.setAttribute('class', 'col-sm-3')
+        listItem.setAttribute('class', 'card')
+        listItem.setAttribute('class', 'placesCard')
         let paragraph = document.createElement('p')
         paragraph.innerText = results[i].name
         let placePicture = document.createElement('img')
+        placePicture.setAttribute('class', 'card-img-top')
+        placePicture.setAttribute('class', 'categoryImg')
         if(results[i].photos){
           placePicture.src = results[i].photos[0].getUrl()
         }else {

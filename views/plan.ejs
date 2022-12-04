@@ -1,4 +1,7 @@
 <%- include('partials/header') -%>
+<link rel="stylesheet" href="css/planForm.css">
+
+
 <body class="plan">
   
 
@@ -13,15 +16,107 @@
             </section>
             <br>
 
-            
-
-            <div class="mt-5">
-              <h2>Tell everyone about all your adventures and the ones you're planning</h2>
+            <!-- <div class="mt-5"> -->
+              
               <section class="container">
                 <section class="row">
                   <section class="col-sm">
 
-              <form action="/post/createPlan" enctype="multipart/form-data" method="POST">
+
+                    <div class="login-box">
+                      <h2>Tell everyone about all your adventures and the ones you're planning</h2>
+                      <form action="/post/createPlan" enctype="multipart/form-data" method="POST">
+                        <div class="user-box">
+                          <label>Location</label>
+                          <input type="text" id="location" name="location">
+                        </div>
+                        <div class="user-box">
+                          <input type="file" id="image-input" accept="image/jpeg, image/png, image/jpg" name="file">
+                        </div>
+                        <h6 name="duration">Duration:</h6>
+                        <div class="user-box">
+                          <label for="arrive">Start</label>
+                          <input type="date" id="arrive" name="depart">
+                          </div>
+                        <div class="user-box">
+                          <label for="depart" >End</label>
+                          <input type="date" id="depart" name="arrive">
+                        </div>
+                        <div class="user-box">
+                          <div name ="budgetPaid" class="dropdown">
+                            <label>Budget:</label>  
+                              <select>  
+                              <option name ="budgetPaid" value = "1">$500 - $1000   
+                              </option>  
+                              <option name ="budgetPaid" value = "2">$1000 - $1500   
+                              </option>  
+                              <option name ="budgetPaid" value = "3">$1500 - $2000  
+                              </option>  
+                              <option name ="budgetPaid" value = "4">$2500 - $3000  
+                              </option> 
+                              <option name ="budgetPaid" value = "5">$3000 - $4000  
+                              </option>  
+                              </select>  
+                          </div>
+                        </div>
+                        <div class="user-box">
+                          <label for="notes">Please share details!</label><br>
+                          <textarea id="notes" name="personalnote"></textarea>
+                        </div>
+                        <div class="user-box">
+                          <input type="checkbox" name="healthcare"><h6 name="healthcare">Healthcare</h6>
+                        </div>
+                        <div class="user-box">
+                          <input type="checkbox" name="allergy"><h6 name="allergy">Food allergy accommodations</h6>
+                        </div>
+                        <div class="user-box">
+                          <input type="checkbox" name="transp"><h6 name="transp">Accessible transportation</h6>
+                        </div>
+                        <div class="user-box">
+                          <input type="checkbox" name="handicap"><h6 name="handicap">Handicap Accommodations</h6>
+                        </div>
+                        <div class="user-box">
+                          <h6 name="help">I need/ed help with...?</h6>
+                 
+                            <input type="radio"  id="communication" name="help">
+                            <label for="communication">Communication</label>
+                 
+                            <input type="radio"  id="living" name="help">
+                            <label for="living">Room/Board</label>
+                 
+                            <input type="radio"  id="eat" name="help">
+                            <label for="eat">Finding food</label><br>
+
+                            <input type="radio"  id="careOp" name="help">
+                            <label for="careOp">Healthcare options</label>
+
+                            <input type="radio"  id="Other" name="help">
+                            <label for="Other">Other</label>
+                        </div>
+                        <div class="user-box">
+                          <label for="kidfriendly" name="kid" class="form-label">Traveling with little ones?</label>
+                          <input type="checkbox"  id="kidfriendly" name="kidfriendly">
+                        </div>
+                        <div class="user-box">
+                          <label for="petfriendly" name="pet" class="form-label">Traveling with pets?</label>
+                          <input type="checkbox" id="petfriendly" name="petfriendly">
+                        </div>
+                        
+                        <a href="/planTrip">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <button type="submit" class="planFormBtn" value="Upload">Submit</button>
+                        </a>
+                      </form>
+                    </div>
+
+
+
+
+
+              <!-- <form action="/post/createPlan" enctype="multipart/form-data" method="POST">
                 <div class="mb-3">
                     <label for="location" class="form-label">Location</label>
                     <input type="text" class="form-control" id="location" name="location">
@@ -64,7 +159,9 @@
                 </div>
               </section>
                 
-              <section class="col">
+              <section class="col"> -->
+
+                <!-- BREAK -->
                 <!-- <div class="mb-3">
                   <h6 name="room">Room/Board</h6>
                  
@@ -92,8 +189,10 @@
                  <input type="radio"  id="Other" name="room">
                  <label for="Other" class="form-label">Other</label>
                 </div> -->
-                
-                <div class="mb-3">
+                <!-- END BREAK -->
+
+
+                <!-- <div class="mb-3">
                   <h6 name="healthcare">Healthcare</h6><input type="checkbox" name="healthcare">     
                 </div>
   
@@ -111,7 +210,8 @@
                 <div class="mb-3">
                   <h6 name="handicap">Handicap Accommodations</h6><input type="checkbox" name="handicap">
                 </div>
-  
+   -->
+   <!-- BREAK -->
                 <!-- <div class="mb-3">
                   <h6 name="shop">I want access to shopping:</h6>
                  
@@ -124,8 +224,8 @@
                  <input type="radio"  id="grocery" name="shop">
                  <label for="grocery" class="form-label">Grocery</label>
                 </div> -->
-  
-                <div class="mb-3">
+  <!-- END -->
+                <!-- <div class="mb-3">
                   <h6 name="help">I need/ed help with...?</h6>
                  
                  <input type="radio"  id="communication" name="help">
@@ -154,8 +254,8 @@
                   <input type="checkbox" id="petfriendly" name="petfriendly">
                 </div> 
                 <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
-              </form>
-            </div>
+              </form> -->
+            <!-- </div> -->
         </div>
       </section>
     </section>

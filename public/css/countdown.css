@@ -1,17 +1,21 @@
 
 
-#countdown{
-	width: 465px;
-	height: 112px;
-	text-align: center;
-	background: #222;
-	border: 1px solid #111;
-	border-radius: 5px;
-	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
-	margin: auto;
-	padding: 20px 0;
-	position: absolute;
-  top: 0; bottom: 0; left: 0; right: 0;
+#countdown {
+    width: 465px;
+    height: 112px;
+    text-align: center;
+    background: #222;
+    border: 1px solid #111;
+    border-radius: 5px;
+    box-shadow: 0px 0px 8px rgb(0 0 0 / 60%);
+    margin: auto;
+	margin-top: 8%;
+    padding: 20px 0;
+    position: absolute;
+    /* top: 0; */
+    /* bottom: 0; */
+    left: 0;
+    right: 0;
 }
 
 #countdown:before{
@@ -99,4 +103,8 @@
 .hideCountdown{
 	display: none !important;
 
+	}
+
+	*, ::after, ::before {
+		box-sizing: content-box;
 	}
