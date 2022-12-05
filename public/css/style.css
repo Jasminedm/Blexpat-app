@@ -42,8 +42,10 @@ li{
   background-image: url("../imgs/blackgrl.jpg");
 }
 .arrow:hover{
+color: rgb(7, 151, 191);
+}
+.showPlanArrow{
 color: whitesmoke;
-
 }
 
 /* SIGNUP */
@@ -183,6 +185,11 @@ text-align: center;
   .itencol{
     flex-direction: column;
   }
+  .directionText{
+    font-size: 2.2rem;
+    line-height: 1.2;
+    color: aquamarine;
+  }
 
   .placesCard{
     width: 30%;
@@ -193,10 +200,18 @@ text-align: center;
   }
   .quizSect{
     text-align: center;
+    color: antiquewhite;
+    font-size: 2rem;
   }
   .subHeadPlan{
    display: inline-block;
    margin-right: 5%;
+  }
+  .planMyTrips{
+    color: whitesmoke;
+  }
+  .planMyTrips:hover{
+color: rgb(17, 112, 112);
   }
 
   /* Show Plan */
@@ -259,7 +274,7 @@ text-align: center;
   width:90px;
   height:25px;
   border-width:1px;
-  color:rgba(215, 248, 252, 1);
+  color:rgb(2, 51, 57);
   border-color:rgba(138, 131, 54, 1);
   font-weight:bold;
   border-top-left-radius:15px;

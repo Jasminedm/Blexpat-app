@@ -1,7 +1,9 @@
 <%- include('partials/header') -%>
 <link rel="stylesheet" href="/css/countdown.css">
 <body class="showPlanBody">
+  
   <section class="showPlanSubBody">
+    <a href="/planTrip" class="btn arrow showPlanArrow"><i class="fa fa-circle-arrow-left"></i></a>
 <section class="contentSect">
 <section class="row showPlanBanner clearfix">
   <section id="count">
@@ -27,6 +29,7 @@
 <img src="<%= plan.postImg %>" class="showPlanImg" alt="">
 
 <section class="itencol">
+  <%= plan.personalnote %>
     <h1>Build your Itenerary</h1><br>
 
     <button class="nextItem buttonClass" type="button">Add New</button>
@@ -60,7 +63,7 @@
           <button onclick="getAttractions()" class="attractions buttonClass">Attractions</button>
           <br><br>
           <div id="googleMap"></div>
-          <div id="output"></div>
+          <div id="output" class="directionText"></div>
           <ul id="steps"></ul>
         </div>
   </section> 
@@ -81,10 +84,12 @@
 </section>
 <section class="quizSect">
   <h6>Discover a book to inspire your travel plans!</h6>
-  <div data-tf-widget="kYxFSQZz" data-tf-opacity="80" data-tf-iframe-props="title=Find a book to inspire your journey!" data-tf-medium="snippet" style="width:100%;height:300px;"></div><script src="//embed.typeform.com/next/embed.js"></script>
+  <div data-tf-widget="kYxFSQZz" data-tf-iframe-props="title=Find a book to inspire your journey!" data-tf-medium="snippet" style="width:100%;height:400px;"></div><script src="//embed.typeform.com/next/embed.js"></script>
 </section>
 
 </section>
+
+
 
 <script src="../JS/countdown.js"></script>
 <script src="../JS/main.js"></script>
