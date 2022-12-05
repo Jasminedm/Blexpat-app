@@ -7,7 +7,7 @@ const PostSchema = new mongoose.Schema({
   },
   location: {
     type: String,
-    
+    require: true,
   },
   postImg: {
     type: String,
@@ -31,7 +31,7 @@ const PostSchema = new mongoose.Schema({
   },
   personalnote: {
     type: String,
-    
+    require: true,
   },
   room: {
     type: String,
@@ -59,7 +59,7 @@ const PostSchema = new mongoose.Schema({
   },
   help:{
     type: String,
-    
+    require: true,
   },
   kidfriendly: {
     type: String,

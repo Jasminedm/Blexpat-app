@@ -1,24 +1,71 @@
 <%- include('partials/header') -%>
+<link rel="stylesheet" href="/css/countdown.css">
+<body class="feedPlanBody">
+  
+  <section class="feedPlanSubBodySect">
+    <section class="contentSect">
+      <section class="row showPlanBanner clearfix">
+        <section id="count">
+          <div id="countdown">
+              <div id='tiles' data-trip="<%= plan.arrive%>"></div>
+              <div class="labels">
+                <li>Days</li>
+                <li>Hours</li>
+                <li>Mins</li>
+                <li>Secs</li>
+              </div>
+            </div>
+        </section>
+        
+      </section>
+
 <section class="feedPlanSect">
-<h1><%= plan.location %></h1> <br>
-<img src="<%= plan.postImg %>" alt="">
-<h3><%= plan.personalnote %></h3>
-
+  <h1><%= plan.location %></h1> <br>
+  <section class="feedPlanimgAndInfo">
+<img src="<%= plan.postImg %>" class="feedPlanImg" alt="">
+<section class="feedPlanInfoTxt">
+<p>Start Date: <%= plan.depart %></p>
+<p>End Date: <%= plan.arrive %></p>
+<p>Budget: <%= plan.budgetPaid %></p>
 <% if(plan.healthcare){ %>
-    <h5>I used healthcare</h5>
+    <p>I did/will use healthcare</p>
 <% } %>
-
-
+<% if(plan.allergy){ %>
+  <p>I did/will need food allergy accommodations</p>
+<% } %>
+<% if(plan.transp){ %>
+  <p>I did/will need accessible transportation</p>
+<% } %>
+<% if(plan.handicap){ %>
+  <p>I did/will need dissability accommodations</p>
+<% } %>
+<p>I did/will need assistance with <%= plan.help %></p>
+<% if(plan.kid){ %>
+  <p>I did/will travel with little ones</p>
+<% } %>
+<% if(plan.pet){ %>
+  <p>I did/will travel with my furry friend</p>
+<% } %>
+</section>
+</section>
+<section class="details">
+<h3><%= plan.personalnote %></h3>
+</section>
 
 <form action="/comment/createComment/<%= plan._id %>" method="post">
     <textarea name="comment" id="" cols="30" rows="10"></textarea>
-    <button type="submit">Comment</button>
+    <button type="submit" class="buttonClass">Comment</button>
     <!-- <button>Delete</button>  -->
   </form>
+  <section class="feedPlanCommentsSect">
   <% for(let i = 0; i < comment.length; i++){ %>
-    <h6><%= comment[i].comment %></h6>
+    <section class="feedPlanEachComment">
+    <h6>User Name</h6><h6 class="commentTxt"><%= comment[i].comment %></h6>
+  </section>
  <% } %>
 </section>
-
+</section>
+</section>
+</body>
 <!-- ADD COMMENTING!!! -->
 <%- include('partials/footer') -%>

@@ -1,3 +1,8 @@
+*, ::after, ::before {
+  box-sizing: border-box !important;
+}
+
+
 .loginBody{
 color: black;
 
@@ -50,8 +55,8 @@ color: whitesmoke;
 }
 /* INPUT PAGES */
 textarea{
-    height: 100px;
-    width: 380px;
+  height: 35px;
+  width: 100%;
 }
 .display-image{
     width: 100%;
@@ -82,7 +87,7 @@ textarea{
     background-size: cover;
   } */
   .feed{
-    background-image: url("../imgs/watercity.jpg");
+    background-image: url("../imgs/watercity1.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -91,6 +96,21 @@ textarea{
   .feedSect{
     text-align: center;
     padding: 20%;
+  }
+  .feedPlanBody{
+    background-image: url("../imgs/bluegreencloud.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    
+  }
+  .planTripBody{
+    background-image: url("../imgs/watercity1.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
   }
   .planTripSect{
     text-align: center;
@@ -107,7 +127,7 @@ height: 100px;
   }
   /* EXPLORE */
   .explore{
-    background-image: url("../imgs/couplebeeach1.jpg");
+    background-image: url("../imgs/couplebeeach.jpg");
     background-position: center;
     background-size: cover;
   }
@@ -139,10 +159,31 @@ text-align: center;
   .planSect{
     padding: 15%;
   }
-
+.showPlanBody{
+  background-image: url("../imgs/bluewood.jpg");
+}
+.showPlanSubBody{
+  padding: 10%;
+}
+.contentSect{
+   background-color: rgba(5, 225, 214, 0.3);;
+}
   .showPlanBanner{
     height: 200px;
   }
+  .imgItenSect{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .showPlanImg{
+    width: 30%;
+    height: auto;
+  }
+  .itencol{
+    flex-direction: column;
+  }
+
   .placesCard{
     width: 30%;
     height: 200px;
@@ -162,8 +203,34 @@ text-align: center;
   .showPlanSect{
     text-align: center;
   }
+  .feedPlanSubBodySect{
+    padding: 10%;
+  }
   .feedPlanSect{
     text-align: center;
+    padding: 10%;
+    
+  }
+  .feedPlanimgAndInfo{
+    display: flex;
+  }
+  .feedPlanImg{
+    width: 30%;
+    height: auto;
+  }
+  .feedPlanInfoTxt{
+    font-size: .65rem;
+    padding: 5%;
+  }
+  
+  .feedPlanEachComment{
+    border: 1px solid rgb(94, 131, 205);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .commentTxt{
+    padding: 3%;
   }
   /* PLAN END */
   /* FOOTER */
@@ -186,4 +253,24 @@ text-align: center;
 
 
 
-/* bubbleButton */
+.buttonClass {
+  font-size:10px;
+  font-family:Trebuchet MS;
+  width:90px;
+  height:25px;
+  border-width:1px;
+  color:rgba(215, 248, 252, 1);
+  border-color:rgba(138, 131, 54, 1);
+  font-weight:bold;
+  border-top-left-radius:15px;
+  border-top-right-radius:15px;
+  border-bottom-left-radius:15px;
+  border-bottom-right-radius:15px;
+  box-shadow: 1px 0px 0px 0px rgba(114, 123, 126, 1);
+  text-shadow: 2px 1px 23px #e1e2ed;
+  background:linear-gradient(#ededed, rgba(41, 147, 224, 1));
+}
+
+.buttonClass:hover {
+  background: linear-gradient(rgba(41, 147, 224, 1), #ededed);
+}

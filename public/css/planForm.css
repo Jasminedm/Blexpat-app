@@ -1,3 +1,5 @@
+
+
 html {
     height: 100%;
   }
@@ -29,11 +31,17 @@ html {
   }
   
   .login-box .user-box {
-    position: relative;
+    /* position: relative; */
+    display: flex;
+    justify-content: space-between;
+  }
+  .helpdropdown{
+    display: block;
+    
   }
   
   .login-box .user-box input {
-    width: 100%;
+    /* width: 100%; */
     padding: 10px 0;
     font-size: 16px;
     color: #fff;
@@ -55,7 +63,7 @@ html {
   }
   
   .login-box .user-box input:focus ~ label,
-  .login-box .user-box input:valid ~ label {
+  .login-box .helpdropdown input:valid ~ label {
     top: -20px;
     left: 0;
     color: #03e9f4;
