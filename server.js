@@ -65,6 +65,7 @@ app.listen(process.env.PORT, () => {
   console.log("Server is running, you better catch it!");
 });
 
+const uri = process.env.DB_STRING;
 const client = new MongoClient(uri);
 
 app.get("/items/:my_item", async (req, res) => {
