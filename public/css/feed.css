@@ -12,7 +12,7 @@
     background: rgba(118, 135, 196, 0.5);
     
     box-shadow: 0 15px 25px rgba(2, 84, 78, 0.6);
-    border-radius: 10px;
+    border-radius: 3px;
 }
 .feedImgs{
     width: 100px;
@@ -27,6 +27,7 @@
     padding: 5%;
     margin: 1%;
     min-width: 200px;
+    border-radius: 10px;
 }
 .feedFilterLabel{
     font-size: 1rem;

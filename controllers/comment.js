@@ -1,10 +1,12 @@
-
+const ObjectId = require("mongodb").ObjectId;
 const Comment = require("../models/Comment");
+const User = require("../models/User");
 
 module.exports = {
   
     createComment: async (req, res) => {
-        console.log('hello')
+      let user = await User.findById({ _id: ObjectId(req.user.id) });
+      console.log()
     try {
         console.log(req.body)
         console.log(req.params.id)
@@ -12,6 +14,7 @@ module.exports = {
         post: req.params.id,
         comment: req.body.comment,
         user: req.user.id,
+        userName: user.userName
       });
       console.log("Comment has been added!");
       res.redirect(`/feedPlan/${req.params.id}`);

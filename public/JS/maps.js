@@ -5,6 +5,7 @@
 // https://developers.google.com/maps/documentation/javascript/geocoding#Geocoding
 // LINK TO THIS PROJECT IN GOOGLE API ACCT https://console.cloud.google.com/google/maps-apis/credentials?project=blexpat
 
+
 const coordinates = { lat: 42.361145, lng: -71.057083 };
     const mapOptions = {
       center: coordinates,
