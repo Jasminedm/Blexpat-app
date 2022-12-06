@@ -11,6 +11,7 @@ const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
 const postRoutes = require("./routes/posts");
 const commentRoutes = require('./routes/comment');
+const { MongoClient } = require('mongodb');
 
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
@@ -62,4 +63,23 @@ app.use('/comment', commentRoutes);
 //Server Running
 app.listen(process.env.PORT, () => {
   console.log("Server is running, you better catch it!");
+});
+
+const client = new MongoClient(uri);
+
+app.get("/items/:my_item", async (req, res) => {
+    let my_item = req.params.my_item;
+    let item = await client.db("my_db")
+                .collection("my_collection")
+                .findOne({my_item: my_item})
+
+    return res.json(item)
+})
+
+client.connect(err => {
+    if(err){ console.error(err); return false;}
+    // connection to mongo is successful, listen for requests
+    app.listen(PORT, () => {
+        console.log("listening for requests");
+    })
 });
