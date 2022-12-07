@@ -18,9 +18,9 @@ module.exports = {
   },
   getFeed: async (req, res) => {
     try {
-      const id = await Plan.findById(req.params.id)
-      const plan = await Plan.find({ user: req.user.id });
-      res.render("feed.ejs", { plan: plan, user: req.user, id: id});
+      
+      const plan = await Plan.find();
+      res.render("feed.ejs", { plan: plan, user: req.user});
     } catch (err) {
       console.log(err);
     }
