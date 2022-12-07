@@ -11,10 +11,11 @@ module.exports = {
         console.log(req.body)
         console.log(req.params.id)
       await Comment.create({
-        post: req.params.id,
+        post: ObjectId(req.params.id),
         comment: req.body.comment,
         user: req.user.id,
-        userName: user.userName
+        userName: user.userName,
+        
       });
       console.log("Comment has been added!");
       res.redirect(`/feedPlan/${req.params.id}`);

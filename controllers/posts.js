@@ -2,6 +2,7 @@ const cloudinary = require("../middleware/cloudinary");
 const Post = require("../models/Post");
 const Comment = require("../models/Comment");
 const Plan = require("../models/Plan");
+const ObjectId = require("mongodb").ObjectId;
 
 
 
@@ -28,7 +29,7 @@ module.exports = {
     try {
       
       const plan = await Plan.findById(req.params.id);
-      const comment = await Comment.find().sort({ createdAt: "desc" }).lean();;
+      const comment = await Comment.find({post: ObjectId(req.params.id)}).sort({ createdAt: "desc" }).lean();;
       res.render("feedPlan.ejs", { plan: plan, user: req.user, comment: comment});
     } catch (err) {
       console.log(err);
