@@ -159,13 +159,15 @@ text-align: center;
     background-size: cover;
   }
   .planSect{
-    padding: 15%;
+    padding-top: 20%;
+    padding-bottom: 15%;
   }
 .showPlanBody{
   background-image: url("../imgs/bluewood.jpg");
 }
 .showPlanSubBody{
-  padding: 10%;
+  
+    padding: 20% 10% 15% 10%;
 }
 .contentSect{
    background-color: rgba(5, 225, 214, 0.3);;
@@ -221,6 +223,7 @@ color: rgb(17, 112, 112);
   /* Show Plan */
   .showPlanSect{
     text-align: center;
+    padding: 2%;
   }
   .feedPlanSubBodySect{
     padding: 10%;

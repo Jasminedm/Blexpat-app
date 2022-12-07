@@ -26,7 +26,7 @@
 <section class="feedPlanInfoTxt">
 <p>Start Date: <%= plan.depart %></p>
 <p>End Date: <%= plan.arrive %></p>
-<p>Budget: <%= plan.budgetPaid %></p>
+<!-- <p>Budget: <%= plan.budgetPaid %></p> -->
 <% if(plan.healthcare){ %>
     <p>I did/will use healthcare</p>
 <% } %>
@@ -39,7 +39,7 @@
 <% if(plan.handicap){ %>
   <p>I did/will need dissability accommodations</p>
 <% } %>
-<p>I did/will need assistance with <%= plan.help %></p>
+
 <% if(plan.kid){ %>
   <p>I did/will travel with little ones</p>
 <% } %>
