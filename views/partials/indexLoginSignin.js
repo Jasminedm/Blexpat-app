@@ -7,9 +7,9 @@
     <title>Quick Pound</title>
     <link
       rel="icon"
-      type="image/png"
+      type="image/jpg"
       sizes="32x32"
-      href="/imgs/favicon-32x32.png"
+      href="/imgs/bb.jpg"
     />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
