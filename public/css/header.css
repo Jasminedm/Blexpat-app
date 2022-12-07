@@ -111,15 +111,16 @@ nav .wrapper {
     /* visibility: hidden; */
   }
   nav li {
-    border-bottom: 2px solid #1a1518;
+    border-bottom: 2px solid #00bcd4;
+    margin-right: 10%;
     color: #1a1518;
-    display: block;
+    /* display: block; */
     font-size: 1.5em;
-    padding: 2em 0;
+    /* padding: 2em 0; */
   }
   nav #menu-toggle:checked ~ ul {
     opacity: 1;
-    height: 100vh;
+    height: 6vh;
     visibility: visible;
   }
   nav .label-toggle {

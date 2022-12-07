@@ -2,7 +2,7 @@
 
 #countdown {
     width: 465px;
-    height: 112px;
+    height: 125px;
     text-align: center;
     background: #222;
     border: 1px solid #111;
@@ -94,7 +94,7 @@
 #countdown .labels li{
 	width: 102px;
 	font: bold 15px 'Droid Sans', Arial, sans-serif;
-	color: #f47321;
+	color: #0594c3;
 	text-shadow: 1px 1px 0px #000;
 	text-align: center;
 	text-transform: uppercase;
