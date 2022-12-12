@@ -120,8 +120,8 @@ document.querySelector(".get").addEventListener("click", () => {
       let getImg = document.querySelector(".pictures")
       getImg.innerHTML = ""
       //grab pictures quereyselector
-      for (var i = 0; i < results.length; i++) {
-        var place = results[i];
+      for (let i = 0; i < results.length; i++) {
+        let place = results[i];
         //make new pic element, set src to results[i].photos[0].getUrl()
         //append img element to pic div
         let listItem = document.createElement('li')

@@ -1,4 +1,4 @@
-// TODO LIST
+// Itenerary LIST
 document.querySelector('.nextItem').addEventListener('click', nextInput)
 console.log('arrived!!')
 function nextInput(){
